@@ -30,7 +30,7 @@ window.addEventListener('load', function(){
 
 });
 
-function mostrarAlerta(mensaje) {
+function mostrarAlerta(                                                                                             ) {
     msgError.innerHTML = mensaje;
     msgError.style.display = 'block';
 }
@@ -70,7 +70,12 @@ async function autenticar() {
 
         if(result.codigo === '00') {
             localStorage.setItem('result', JSON.stringify(result));
-            window.location.replace('principal.html');
+            
+            localStorage.setItem("tipoDocumento",tipoDocumento.value)
+           localStorage.setItem("numeroDocumento",numeroDocumento.value)
+
+            window.location.replace('principal.html');       
+
         } else {
             mostrarAlerta(result.mensaje);
         }
